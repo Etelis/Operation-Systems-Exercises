@@ -9,7 +9,7 @@ Objectives
 ----------
 * Implement a custom shell in C that can execute basic Linux commands using `fork()` and `exec()`. Pipes and complex commands are not required.
 * Implement specific shell commands (`history`, `cd`, `pwd`, `exit`) without using the default Unix implementations.
-* Ensure all commands run in the foreground and handle errors appropriately. The parent process should wait for the child process to complete. (if failed just print `perror("%s failed", COMMAND_NAME)` and exit.)
+* Ensure all commands run in the foreground and handle errors appropriately. The parent process should wait for the child process to complete. (if failed just print `perror("X failed")` X might be fork, wait and etc.. and exit.)
 * When the compiled program is initially run, it should accept any number of arguments consisting only of paths that may contain executable commands (e.g., `./a.out /root/custom_folder /root/another_folder`). Any executable program within those folders should be recognized by the shell.
 
 Unix Commands:
@@ -33,7 +33,7 @@ These commands should be implemented using appropriate system calls and library 
 Command Execution
 -----------------
 * Commands should be executed in the foreground using `exec()` in a forked process.
-* For commands not explicitly handled (`history`, `cd`, `pwd`, `exit`), the shell should use `exec()` to invoke them with the passed arguments. Initially, the commands should be provided with their full paths.
+* For commands not explicitly handled (`history`, `cd`, `pwd`, `exit`), NO EXEC OR FORK ARE NEEDED!
 * Use `strtok()` with a space delimiter to parse the command into its core components.
 
 Error Handling

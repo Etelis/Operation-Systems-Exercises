@@ -87,6 +87,8 @@ It is essential that your script handles various scenarios and edge cases gracef
 *   **No `awk` or external scripting**: Your solution should rely solely on Bash and the provided Python script.
 *   **Exact match for strings and board layout**: The appearance and output of your script should strictly follow the specified formats.
 
+### BONUS
+If you want 10 bonus points, implement all chess moves correcly and not only promotion, BUT ALL OF YOU SHOULD HANDLE PROMOTION
 
 ### Examples
 
