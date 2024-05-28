@@ -39,11 +39,11 @@ Move 93/93
   a b c d e f g h
 8 . . . . . . . r  8
 7 . . . . . . . .  7
-6 . . . . k . p .  6
-5 . . P . . . . p  5
-4 . . . p K . . .  4
-3 . b . . . P . .  3
-2 . . . B . . . P  2
+6 . . . . . . . .  6
+5 . . b . . . . .  5
+4 . . . . . . . .  4
+3 . P . . . . . .  3
+2 . . . . . . . P  2
 1 . . . . . . . R  1
   a b c d e f g h
 Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit: x
@@ -137,7 +137,7 @@ Move 93/93
 7 . . . . . . . .  7
 6 . . . . k . p .  6
 5 . . P . . . . p  5
-4 . . . p K . . .  4
+4 . . . p . . . .  4
 3 . b . . . P . .  3
 2 . . . B . . . P  2
 1 . . . . . . . R  1
@@ -153,7 +153,7 @@ Move 92/93
 7 . . . . . . . .  7
 6 . . . . k . p .  6
 5 . . P . . . . p  5
-4 . . . p . K . .  4
+4 . . . p . . . .  4
 3 . b . . . P . .  3
 2 . . . B . . . P  2
 1 . . . . . . . R  1
@@ -171,7 +171,7 @@ Move 93/93
 7 . . . . . . . .  7
 6 . . . . k . p .  6
 5 . . P . . . . p  5
-4 . . . p K . . .  4
+4 . . . p . . . .  4
 3 . b . . . P . .  3
 2 . . . B . . . P  2
 1 . . . . . . . R  1
@@ -227,11 +227,11 @@ Move 93/93
   a b c d e f g h
 8 . . . . . . . r  8
 7 . . . . . . . .  7
-6 . . . . k . p .  6
-5 . . P . . . . p  5
-4 . . . p K . . .  4
-3 . b . . . P . .  3
-2 . . . B . . . P  2
+6 . . . . . . . .  6
+5 . . b . . . . .  5
+4 . . . . . . . .  4
+3 . P . . . . . .  3
+2 . . . . . . . P  2
 1 . . . . . . . R  1
   a b c d e f g h
 Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit: c
@@ -241,11 +241,11 @@ Move 92/93
   a b c d e f g h
 8 . . . . . . . r  8
 7 . . . . . . . .  7
-6 . . . . k . p .  6
-5 . . P . . . . p  5
-4 . . . p . K . .  4
-3 . b . . . P . .  3
-2 . . . B . . . P  2
+6 . . . . . . . .  6
+5 . . b . . . . .  5
+4 . . . . . . . .  4
+3 . P . . . . . .  3
+2 . . . . . . . P  2
 1 . . . . . . . R  1
   a b c d e f g h
 Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit: w
@@ -383,7 +383,7 @@ Move 93/93
 7 . . . . . . . .  7
 6 . . . . k . p .  6
 5 . . P . . . . p  5
-4 . . . p K . . .  4
+4 . . . . K . . .  4
 3 . b . . . P . .  3
 2 . . . B . . . P  2
 1 . . . . . . . R  1
@@ -393,11 +393,11 @@ Move 93/93
   a b c d e f g h
 8 . . . . . . . r  8
 7 . . . . . . . .  7
-6 . . . . k . p .  6
-5 . . P . . . . p  5
-4 . . . p K . . .  4
-3 . b . . . P . .  3
-2 . . . B . . . P  2
+6 . . . . . . . .  6
+5 . . b . . . . .  5
+4 . . . . . . . .  4
+3 . P . . . . . .  3
+2 . . . . . . . P  2
 1 . . . . . . . R  1
   a b c d e f g h
 Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit: v
@@ -409,7 +409,7 @@ Move 93/93
 7 . . . . . . . .  7
 6 . . . . k . p .  6
 5 . . P . . . . p  5
-4 . . . p K . . .  4
+4 . . . . K . . .  4
 3 . b . . . P . .  3
 2 . . . B . . . P  2
 1 . . . . . . . R  1
@@ -419,11 +419,11 @@ Move 93/93
   a b c d e f g h
 8 . . . . . . . r  8
 7 . . . . . . . .  7
-6 . . . . k . p .  6
-5 . . P . . . . p  5
-4 . . . p K . . .  4
-3 . b . . . P . .  3
-2 . . . B . . . P  2
+6 . . . . . . . .  6
+5 . . b . . . . .  5
+4 . . . . . . . .  4
+3 . P . . . . . .  3
+2 . . . . . . . P  2
 1 . . . . . . . R  1
   a b c d e f g h
 Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit: s
@@ -433,7 +433,7 @@ Move 93/93
 7 . . . . . . . .  7
 6 . . . . k . p .  6
 5 . . P . . . . p  5
-4 . . . p K . . .  4
+4 . . . . K . . .  4
 3 . b . . . P . .  3
 2 . . . B . . . P  2
 1 . . . . . . . R  1
@@ -449,11 +449,11 @@ Move 93/93
   a b c d e f g h
 8 . . . . . . . r  8
 7 . . . . . . . .  7
-6 . . . . k . p .  6
-5 . . P . . . . p  5
-4 . . . p K . . .  4
-3 . b . . . P . .  3
-2 . . . B . . . P  2
+6 . . . . . . . .  6
+5 . . b . . . . .  5
+4 . . . . . . . .  4
+3 . P . . . . . .  3
+2 . . . . . . . P  2
 1 . . . . . . . R  1
   a b c d e f g h
 Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit: z
@@ -463,11 +463,11 @@ Move 92/93
   a b c d e f g h
 8 . . . . . . . r  8
 7 . . . . . . . .  7
-6 . . . . k . p .  6
-5 . . P . . . . p  5
-4 . . . p . K . .  4
-3 . b . . . P . .  3
-2 . . . B . . . P  2
+6 . . . . . . . .  6
+5 . . b . . . . .  5
+4 . . . . . . . .  4
+3 . P . . . . . .  3
+2 . . . . . . . P  2
 1 . . . . . . . R  1
   a b c d e f g h
 Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit: w
@@ -545,7 +545,7 @@ Move 93/93
 7 . . . . . . . .  7
 6 . . . . k . p .  6
 5 . . P . . . . p  5
-4 . . . p K . . .  4
+4 . . . . K . . .  4
 3 . b . . . P . .  3
 2 . . . B . . . P  2
 1 . . . . . . . R  1
@@ -559,11 +559,11 @@ Move 93/93
   a b c d e f g h
 8 . . . . . . . r  8
 7 . . . . . . . .  7
-6 . . . . k . p .  6
-5 . . P . . . . p  5
-4 . . . p K . . .  4
-3 . b . . . P . .  3
-2 . . . B . . . P  2
+6 . . . . . . . .  6
+5 . . b . . . . .  5
+4 . . . . . . . .  4
+3 . P . . . . . .  3
+2 . . . . . . . P  2
 1 . . . . . . . R  1
   a b c d e f g h
 Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit: v
@@ -573,11 +573,11 @@ Move 92/93
   a b c d e f g h
 8 . . . . . . . r  8
 7 . . . . . . . .  7
-6 . . . . k . p .  6
-5 . . P . . . . p  5
-4 . . . p . K . .  4
-3 . b . . . P . .  3
-2 . . . B . . . P  2
+6 . . . . . . . .  6
+5 . . b . . . . .  5
+4 . . . . . . . .  4
+3 . P . . . . . .  3
+2 . . . . . . . P  2
 1 . . . . . . . R  1
   a b c d e f g h
 Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit: a
@@ -585,11 +585,11 @@ Move 91/93
   a b c d e f g h
 8 . . . . . . . r  8
 7 . . . . . . . .  7
-6 . . . . k . p .  6
-5 . . P b . . . p  5
-4 . . . p . K . .  4
-3 . . . . . P . .  3
-2 . . . B . . . P  2
+6 . . . . . . . .  6
+5 . . b P . . . .  5
+4 . . . . . . . .  4
+3 . P . . . . . .  3
+2 . . . . . . . P  2
 1 . . . . . . . R  1
   a b c d e f g h
 Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit: s
@@ -599,7 +599,7 @@ Move 93/93
 7 . . . . . . . .  7
 6 . . . . k . p .  6
 5 . . P . . . . p  5
-4 . . . p K . . .  4
+4 . . . . K . . .  4
 3 . b . . . P . .  3
 2 . . . B . . . P  2
 1 . . . . . . . R  1
@@ -619,11 +619,11 @@ Move 93/93
   a b c d e f g h
 8 . . . . . . . r  8
 7 . . . . . . . .  7
-6 . . . . k . p .  6
-5 . . P . . . . p  5
-4 . . . p K . . .  4
-3 . b . . . P . .  3
-2 . . . B . . . P  2
+6 . . . . . . . .  6
+5 . . b . . . . .  5
+4 . . . . . . . .  4
+3 . P . . . . . .  3
+2 . . . . . . . P  2
 1 . . . . . . . R  1
   a b c d e f g h
 Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit: a
@@ -631,11 +631,11 @@ Move 92/93
   a b c d e f g h
 8 . . . . . . . r  8
 7 . . . . . . . .  7
-6 . . . . k . p .  6
-5 . . P . . . . p  5
-4 . . . p . K . .  4
-3 . b . . . P . .  3
-2 . . . B . . . P  2
+6 . . . . . . . .  6
+5 . . b . . . . .  5
+4 . . . . . . . .  4
+3 . P . . . . . .  3
+2 . . . . . . . P  2
 1 . . . . . . . R  1
   a b c d e f g h
 Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit: q
