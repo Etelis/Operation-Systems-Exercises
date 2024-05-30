@@ -11,57 +11,57 @@
   "part_2": [
     {
       "input": "splited_pgns/capmemel24_1.pgn",
-      "moves": "scczvvzwvcscxdvxzzcadzvwdxzwavcazsxsvwacxzsasdassvzvzwxvcdxq",
+      "moves": "scczvvzwvcscxdvxzzcdzvwdxzwavczsxsvwacxzssdassvzvzwxvcdxq",
       "expected_output_ver1": "tests/part_2_test_outputs/part_2_test_capmemel24_1_output_ver1.txt",
       "expected_output_ver2": "tests/part_2_test_outputs/part_2_test_capmemel24_1_output_ver2.txt"
     },
     {
       "input": "splited_pgns/capmemel24_2.pgn",
-      "moves": "ascxzwzwascscwddzdscdcxaasdwvacxvddaxaavdcadvzssszdzvczdzazxddcasscsxxwdasxcavzzxcswavacdwwdczwxvcvq",
+      "moves": "aaaaaaascxzwzwscscwddzdscdcxsdwvcxvddxvdcdvzssszdzvczdzzxddcasscsxxwdsxcvzzxcswvcdwwdczwxvcvq",
       "expected_output_ver1": "tests/part_2_test_outputs/part_2_test_capmemel24_2_output_ver1.txt",
       "expected_output_ver2": "tests/part_2_test_outputs/part_2_test_capmemel24_2_output_ver2.txt"
     },
     {
       "input": "splited_pgns/capmemel24_3.pgn",
-      "moves": "zcxsvzdssxvadsdzsvwsaxddxxvvxcaaawxzcswxxzdwwcvsvdxwxasvdzswacwvxvwwwazxaswq",
+      "moves": "zcxsvzdssxvdsdzsvwsxddxxvvxcwxzcswxxzdwwcvsvdxwxsvdzswcwvxvwwwzxswq",
       "expected_output_ver1": "tests/part_2_test_outputs/part_2_test_capmemel24_3_output_ver1.txt",
       "expected_output_ver2": "tests/part_2_test_outputs/part_2_test_capmemel24_3_output_ver2.txt"
-    },
-    {
+  },
+  {
       "input": "splited_pgns/capmemel24_4.pgn",
-      "moves": "cwzavvwzawxdxvszavczzaxdwxcwsczwaswazazzcccswwdsxvvczvcadcccsxdvzvcazvxwcvvvzdscwzq",
+      "moves": "cwzvvwzwxdxvszvczzxdwxcwsczwswzzzcccswwdsxvvczvcdcccsxdvzvczvxwcvvvzdscwzq",
       "expected_output_ver1": "tests/part_2_test_outputs/part_2_test_capmemel24_4_output_ver1.txt",
       "expected_output_ver2": "tests/part_2_test_outputs/part_2_test_capmemel24_4_output_ver2.txt"
-    },
-    {
+  },
+  {
       "input": "splited_pgns/capmemel24_5.pgn",
-      "moves": "ssxzwwvwwxsaxvddxaxczdvwvavaxxscawwzwaawacazddxssvsssvcvszawwwwxczxvxxzcvsxzsvaascxxxdsaq",
+      "moves": "ssxzwwvwwxsxvddxxczdvwvvxxscwwzwwczddxssvsssvcvszwwwwxczxvxxzcvsxzsvscxxxdsq",
       "expected_output_ver1": "tests/part_2_test_outputs/part_2_test_capmemel24_5_output_ver1.txt",
       "expected_output_ver2": "tests/part_2_test_outputs/part_2_test_capmemel24_5_output_ver2.txt"
-    },
-    {
+  },
+  {
       "input": "splited_pgns/capmemel24_6.pgn",
-      "moves": "wxxvxzxawszczwzxacasxaddacvvsdawxasddxsvdvwwwwxzvxvavxzxaawxdvdxwddvcq",
+      "moves": "wxxvxzxwszczwzxcsxddcvvsdwxsddxsvdvwwwwxzvxvvxzxwxdvdxwddvcq",
       "expected_output_ver1": "tests/part_2_test_outputs/part_2_test_capmemel24_6_output_ver1.txt",
       "expected_output_ver2": "tests/part_2_test_outputs/part_2_test_capmemel24_6_output_ver2.txt"
-    },
-    {
+  },
+  {
       "input": "splited_pgns/capmemel24_7.pgn",
-      "moves": "dwwvcavdvwccddwxxdcxvvxxawxdwdsvadswvvsssxzxaxvzxcwcdq",
+      "moves": "dwwvcvdvwccddwxxdcxvvxxwxdwdsvdswvvsssxzxxvzxcwcdq",
       "expected_output_ver1": "tests/part_2_test_outputs/part_2_test_capmemel24_7_output_ver1.txt",
       "expected_output_ver2": "tests/part_2_test_outputs/part_2_test_capmemel24_7_output_ver2.txt"
-    },
-    {
+  },
+  {
       "input": "splited_pgns/capmemel24_8.pgn",
-      "moves": "daczcvcdzxzavwasczddwvccdxxccswwzzdazcwadxxdczxxvddwcsdcawzddszvcdwvaczxscscwaaaswsvsdq",
+      "moves": "dczcvcdzxzvwsczddwvccdxxccswwzzdzcwdxxdczxxvddwcsdcwzddszvcdwvczxscscwswsvsdq",
       "expected_output_ver1": "tests/part_2_test_outputs/part_2_test_capmemel24_8_output_ver1.txt",
       "expected_output_ver2": "tests/part_2_test_outputs/part_2_test_capmemel24_8_output_ver2.txt"
-    },
-    {
+  },
+  {
       "input": "splited_pgns/capmemel24_9.pgn",
-      "moves": "xdvxdxadacsaccavvsdzzxxcdwwccwaxsxxdzsxszwvdswsxxvsvzxvxszwczssvsdvzdzxcxvavvxwcvcwwvczsccdq",
+      "moves": "xdvxdxdcsccvvsdzzxxcdwwccwxsxxdzsxszwvdswsxxvsvzxvxszwczssvsdvzdzxcxvvvxwcvcwwvczsccdq",
       "expected_output_ver1": "tests/part_2_test_outputs/part_2_test_capmemel24_9_output_ver1.txt",
       "expected_output_ver2": "tests/part_2_test_outputs/part_2_test_capmemel24_9_output_ver2.txt"
-    }
-  ]
+  }
+]
 }
