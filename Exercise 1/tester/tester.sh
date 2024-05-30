@@ -156,7 +156,7 @@ check_part_2() {
         temp_output_file="${output_dir}/part_2_test_capmemel24_$((i+1))_output.txt"
 
         # Adding delay to ensure the program has enough time to process inputs
-        echo "$moves" | ./chess_sim1.sh "$input" > "$temp_output_file" 2>&1
+        echo "$moves" | ./chess_sim.sh "$input" > "$temp_output_file" 2>&1
         sleep 0.5  # Adjust the delay as needed
 
         if ( [ -n "$expected_output_ver1" ] && [ -f "$expected_output_ver1" ] && diff -q -Z "$temp_output_file" "$expected_output_ver1" > /dev/null ) || 
