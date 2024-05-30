@@ -81,6 +81,23 @@ check_part_1() {
 
             cd ..
 
+            for file in "$expected_dir"/*; do
+                if [ -f "$file" ]; then
+                    expected_file="splited_pgns/$(basename "$file")"
+                    if [ -f "$expected_file" ]; then
+                        if diff -q -Z "$file" "$expected_file" > /dev/null; then
+                            echo -e "${GREEN}File '$(basename "$file")' matches expected output.${NC}"
+                        else
+                            echo -e "${RED}File '$(basename "$file")' does not match expected output.${NC}"
+                            echo "Differences:"
+                            diff -Z "$file" "$expected_file"
+                        fi
+                    else
+                        echo -e "${RED}Expected file '$(basename "$file")' does not exist.${NC}"
+                    fi
+                fi
+            done
+
             expected_script_output=$(cat "$expected_output")
             if [ "$script_output" == "$expected_script_output" ]; then
                 echo -e "${GREEN}Test $((i+1)) passed: Script output matches.${NC}"
@@ -100,6 +117,7 @@ check_part_1() {
 
     rm -f "$script_to_run"
 }
+
 
 check_part_2() {
     local part="part_2"
@@ -137,17 +155,28 @@ check_part_2() {
         mkdir -p "$output_dir"
         temp_output_file="${output_dir}/part_2_test_capmemel24_$((i+1))_output.txt"
 
-        echo "$moves" | ./chess_sim.sh "$input" > "$temp_output_file" 2>&1
+        # Adding delay to ensure the program has enough time to process inputs
+        echo "$moves" | ./chess_sim1.sh "$input" > "$temp_output_file" 2>&1
+        sleep 0.5  # Adjust the delay as needed
 
-        if ( [ -n "$expected_output_ver1" ] && [ -f "$expected_output_ver1" ] && diff -q "$temp_output_file" "$expected_output_ver1" > /dev/null ) || 
-           ( [ -n "$expected_output_ver2" ] && [ -f "$expected_output_ver2" ] && diff -q "$temp_output_file" "$expected_output_ver2" > /dev/null ); then
-            if [ -n "$expected_output_ver1" ] && [ -f "$expected_output_ver1" ] && diff -q "$temp_output_file" "$expected_output_ver1" > /dev/null; then
+        if ( [ -n "$expected_output_ver1" ] && [ -f "$expected_output_ver1" ] && diff -q -Z "$temp_output_file" "$expected_output_ver1" > /dev/null ) || 
+           ( [ -n "$expected_output_ver2" ] && [ -f "$expected_output_ver2" ] && diff -q -Z "$temp_output_file" "$expected_output_ver2" > /dev/null ); then
+            if [ -n "$expected_output_ver1" ] && [ -f "$expected_output_ver1" ] && diff -q -Z "$temp_output_file" "$expected_output_ver1" > /dev/null; then
                 echo -e "${GREEN}Test $((i+1)) passed: I see you implemented the special moves! Good job.${NC}"
             else
                 echo -e "${GREEN}Test $((i+1)) passed.${NC}"
             fi
         else
             echo -e "${RED}Test $((i+1)) failed.${NC}"
+            if [ -n "$expected_output_ver1" ] && [ -f "$expected_output_ver1" ]; then
+                echo -e "${YELLOW}Differences with expected_output_ver1:${NC}"
+                diff -u -Z --color "$temp_output_file" "$expected_output_ver1"
+            fi
+            if [ -n "$expected_output_ver2" ] && [ -f "$expected_output_ver2" ]; then
+                echo -e "${YELLOW}Differences with expected_output_ver2:${NC}"
+                diff -u -Z --color "$temp_output_file" "$expected_output_ver2"
+            fi
+            read -p "Press Enter to continue to the next test..."
         fi
 
         rm -f "$temp_output_file"
@@ -155,6 +184,8 @@ check_part_2() {
 
     rm -f "chess_sim.sh"
 }
+
+
 
 while true; do
     echo -e "${BLUE}Select an option:${NC}"
