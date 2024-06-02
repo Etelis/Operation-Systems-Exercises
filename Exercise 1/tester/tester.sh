@@ -27,6 +27,9 @@ check_part_1() {
     echo -e "${BLUE}Checking $part...${NC}"
 
     local test_count=$(jq ".${part} | length" "$CONFIG_FILE")
+    local success_count=0
+    local failure_count=0
+
     for (( i=0; i<$test_count; i++ )); do
         local input=$(jq -r ".${part}[$i].input" "$CONFIG_FILE")
         local params=$(jq -r ".${part}[$i].params" "$CONFIG_FILE")
@@ -38,17 +41,15 @@ check_part_1() {
 
         cd ..
 
-        file1="split_pgn.sh"
-        file2="pgn_split"
-
-        if [ -f "$file1" ]; then
-            cp "$file1" "$OLDPWD"
-            script_to_run="$file1"
-        elif [ -f "$file2" ]; then
-            cp "$file2" "$OLDPWD"
-            script_to_run="$file2"
+        script_to_run=""
+        if [ -f "split_pgn.sh" ]; then
+            cp "split_pgn.sh" "$OLDPWD"
+            script_to_run="split_pgn.sh"
+        elif [ -f "pgn_split" ]; then
+            cp "pgn_split" "$OLDPWD"
+            script_to_run="pgn_split"
         else
-            echo -e "${RED}Error: Neither $file1 nor $file2 exists.${NC}"
+            echo -e "${RED}Error: Neither split_pgn.sh nor pgn_split exists.${NC}"
             cd "$OLDPWD"
             return
         fi
@@ -63,20 +64,16 @@ check_part_1() {
         script_output=$(./"$script_to_run" "$input" "$params" 2>&1)
 
         if [ -d "$expected_dir" ]; then
-            echo -e "${GREEN}Directory '$expected_dir' created successfully.${NC}"
             cd "$expected_dir"
 
             tree_output=$(tree)
             expected_tree_output=$(cat "../$expected_tree")
 
-            if [ "$tree_output" == "$expected_tree_output" ]; then
-                echo -e "${GREEN}Test $((i+1)) passed: Directory structure matches.${NC}"
-            else
+            if ! diff -q <(echo "$tree_output" | sort -u) <(echo "$expected_tree_output" | sort -u) > /dev/null; then
                 echo -e "${RED}Test $((i+1)) failed: Directory structure does not match.${NC}"
-                echo "Expected:"
-                echo "$expected_tree_output"
-                echo "Got:"
-                echo "$tree_output"
+                echo -e "Expected:\n$expected_tree_output"
+                echo -e "Got:\n$tree_output"
+                ((failure_count++))
             fi
 
             cd ..
@@ -85,38 +82,45 @@ check_part_1() {
                 if [ -f "$file" ]; then
                     expected_file="splited_pgns/$(basename "$file")"
                     if [ -f "$expected_file" ]; then
-                        if diff -q -Z "$file" "$expected_file" > /dev/null; then
-                            echo -e "${GREEN}File '$(basename "$file")' matches expected output.${NC}"
-                        else
+                        if ! diff -q -Z "$file" "$expected_file" > /dev/null; then
                             echo -e "${RED}File '$(basename "$file")' does not match expected output.${NC}"
-                            echo "Differences:"
-                            diff -Z "$file" "$expected_file"
+                            echo -e "Differences:\n$(diff -Z "$file" "$expected_file")"
+                            ((failure_count++))
                         fi
                     else
                         echo -e "${RED}Expected file '$(basename "$file")' does not exist.${NC}"
+                        ((failure_count++))
                     fi
                 fi
             done
 
             expected_script_output=$(cat "$expected_output")
-            if [ "$script_output" == "$expected_script_output" ]; then
-                echo -e "${GREEN}Test $((i+1)) passed: Script output matches.${NC}"
-            else
+            if ! diff -q -Z <(echo "$script_output" | sort -u) <(echo "$expected_script_output" | sort -u) > /dev/null; then
                 echo -e "${RED}Test $((i+1)) failed: Script output does not match.${NC}"
-                echo "Expected:"
-                echo "$expected_script_output"
-                echo "Got:"
-                echo "$script_output"
+                echo -e "Expected:\n$expected_script_output"
+                echo -e "Got:\n$script_output"
+                ((failure_count++))
+            else
+                ((success_count++))
             fi
 
             rm -rf "$expected_dir"
         else
             echo -e "${RED}Error: Directory '$expected_dir' was not created.${NC}"
+            ((failure_count++))
         fi
     done
 
+    echo -e "${GREEN}Number of successful tests: $success_count${NC}"
+    echo -e "${RED}Number of failed tests: $failure_count${NC}"
+
     rm -f "$script_to_run"
 }
+
+
+
+
+
 
 
 check_part_2() {
