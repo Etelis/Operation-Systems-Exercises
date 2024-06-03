@@ -194,4 +194,5 @@ PART_1_TESTS=$(jq -c '.part_1[]' "$CONFIG_FILE")
 PART_2_TESTS=$(jq -c '.part_2[]' "$CONFIG_FILE")
 
 run_part_1_tests
+
 run_part_2_tests
