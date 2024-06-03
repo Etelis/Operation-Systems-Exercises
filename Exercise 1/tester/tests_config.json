@@ -2,66 +2,55 @@
   "part_1": [
     {
       "input": "pgns/Alburt.pgn",
-      "params": "1",
-      "expected_dir": "1",
-      "expected_tree": "tests/part_1_test/part_1_test_1.txt",
-      "expected_output": "tests/part_1_test/part_1_test_1_output.txt"
+      "output_dir": "2",
+      "expected_output_directory": "splited_pgns/Alburt",
+      "expected_script_output": "tests/part_1_test/part_1_test_1_output.txt"
+    },
+    {
+      "input": "pgns/capmemel24.pgn",
+      "output_dir": "2",
+      "expected_output_directory": "splited_pgns/capmemel24",
+      "expected_script_output": "tests/part_1_test/part_1_test_1_output.txt"
     }
   ],
-  "part_2": [
+  
+ "part_2": [
     {
-      "input": "splited_pgns/capmemel24_1.pgn",
-      "moves": "scczvvzwvcscxdvxzzcdzvwdxzwavczsxsvwacxzssdassvzvzwxvcdxq",
-      "expected_output_ver1": "tests/part_2_test_outputs/part_2_test_capmemel24_1_output_ver1.txt",
-      "expected_output_ver2": "tests/part_2_test_outputs/part_2_test_capmemel24_1_output_ver2.txt"
+      "input_path_pgn": "splited_pgns/capmemel24/capmemel24_1.pgn",
+      "moves": "ssnddq",
+      "expected_output_without_special_moves": "expected_outputs/chess_game1_without_special_moves.txt",
+      "expected_output_with_special_moves": "expected_outputs/chess_game1_with_special_moves.txt"
     },
     {
-      "input": "splited_pgns/capmemel24_2.pgn",
-      "moves": "aaaaaaascxzwzwscscwddzdscdcxsdwvcxvddxvdcdvzssszdzvczdzzxddcasscsxxwdsxcvzzxcswvcdwwdczwxvcvq",
-      "expected_output_ver1": "tests/part_2_test_outputs/part_2_test_capmemel24_2_output_ver1.txt",
-      "expected_output_ver2": "tests/part_2_test_outputs/part_2_test_capmemel24_2_output_ver2.txt"
+      "input_path_pgn": "splited_pgns/capmemel24/capmemel24_2.pgn",
+      "moves": "dwdxmdwjoaq",
+      "expected_output_without_special_moves": "expected_outputs/chess_game2_without_special_moves.txt",
+      "expected_output_with_special_moves": "expected_outputs/chess_game2_with_special_moves.txt"
     },
     {
-      "input": "splited_pgns/capmemel24_3.pgn",
-      "moves": "zcxsvzdssxvdsdzsvwsxddxxvvxcwxzcswxxzdwwcvsvdxwxsvdzswcwvxvwwwzxswq",
-      "expected_output_ver1": "tests/part_2_test_outputs/part_2_test_capmemel24_3_output_ver1.txt",
-      "expected_output_ver2": "tests/part_2_test_outputs/part_2_test_capmemel24_3_output_ver2.txt"
-  },
-  {
-      "input": "splited_pgns/capmemel24_4.pgn",
-      "moves": "cwzvvwzwxdxvszvczzxdwxcwsczwswzzzcccswwdsxvvczvcdcccsxdvzvczvxwcvvvzdscwzq",
-      "expected_output_ver1": "tests/part_2_test_outputs/part_2_test_capmemel24_4_output_ver1.txt",
-      "expected_output_ver2": "tests/part_2_test_outputs/part_2_test_capmemel24_4_output_ver2.txt"
-  },
-  {
-      "input": "splited_pgns/capmemel24_5.pgn",
-      "moves": "ssxzwwvwwxsxvddxxczdvwvvxxscwwzwwczddxssvsssvcvszwwwwxczxvxxzcvsxzsvscxxxdsq",
-      "expected_output_ver1": "tests/part_2_test_outputs/part_2_test_capmemel24_5_output_ver1.txt",
-      "expected_output_ver2": "tests/part_2_test_outputs/part_2_test_capmemel24_5_output_ver2.txt"
-  },
-  {
-      "input": "splited_pgns/capmemel24_6.pgn",
-      "moves": "wxxvxzxwszczwzxcsxddcvvsdwxsddxsvdvwwwwxzvxvvxzxwxdvdxwddvcq",
-      "expected_output_ver1": "tests/part_2_test_outputs/part_2_test_capmemel24_6_output_ver1.txt",
-      "expected_output_ver2": "tests/part_2_test_outputs/part_2_test_capmemel24_6_output_ver2.txt"
-  },
-  {
-      "input": "splited_pgns/capmemel24_7.pgn",
-      "moves": "dwwvcvdvwccddwxxdcxvvxxwxdwdsvdswvvsssxzxxvzxcwcdq",
-      "expected_output_ver1": "tests/part_2_test_outputs/part_2_test_capmemel24_7_output_ver1.txt",
-      "expected_output_ver2": "tests/part_2_test_outputs/part_2_test_capmemel24_7_output_ver2.txt"
-  },
-  {
-      "input": "splited_pgns/capmemel24_8.pgn",
-      "moves": "dczcvcdzxzvwsczddwvccdxxccswwzzdzcwdxxdczxxvddwcsdcwzddszvcdwvczxscscwswsvsdq",
-      "expected_output_ver1": "tests/part_2_test_outputs/part_2_test_capmemel24_8_output_ver1.txt",
-      "expected_output_ver2": "tests/part_2_test_outputs/part_2_test_capmemel24_8_output_ver2.txt"
-  },
-  {
-      "input": "splited_pgns/capmemel24_9.pgn",
-      "moves": "xdvxdxdcsccvvsdzzxxcdwwccwxsxxdzsxszwvdswsxxvsvzxvxszwczssvsdvzdzxcxvvvxwcvcwwvczsccdq",
-      "expected_output_ver1": "tests/part_2_test_outputs/part_2_test_capmemel24_9_output_ver1.txt",
-      "expected_output_ver2": "tests/part_2_test_outputs/part_2_test_capmemel24_9_output_ver2.txt"
-  }
-]
+      "input_path_pgn": "splited_pgns/capmemel24/capmemel24_3.pgn",
+      "moves": "sodsaaaaq",
+      "expected_output_without_special_moves": "expected_outputs/chess_game3_without_special_moves.txt",
+      "expected_output_with_special_moves": "expected_outputs/chess_game3_with_special_moves.txt"
+    },
+    {
+      "input_path_pgn": "splited_pgns/capmemel24/capmemel24_4.pgn",
+      "moves": "idwwkwyadaddawkdawwsawdwswsadusfawsq",
+      "expected_output_without_special_moves": "expected_outputs/chess_game4_without_special_moves.txt",
+      "expected_output_with_special_moves": "expected_outputs/chess_game4_with_special_moves.txt"
+    },
+    {
+      "input_path_pgn": "splited_pgns/capmemel24/capmemel24_5.pgn",
+      "moves": "dwdwadaaddgwswkdlwddsaswsssasoslhadq",
+      "expected_output_without_special_moves": "expected_outputs/chess_game5_without_special_moves.txt",
+      "expected_output_with_special_moves": "expected_outputs/chess_game5_with_special_moves.txt"
+    },
+    {
+      "input_path_pgn": "splited_pgns/capmemel24/capmemel24_6.pgn",
+      "moves": "ddamawshdzfawiwadawdsdwsddwaadwwscladaq",
+      "expected_output_without_special_moves": "expected_outputs/chess_game6_without_special_moves.txt",
+      "expected_output_with_special_moves": "expected_outputs/chess_game6_with_special_moves.txt"
+    }
+  ]
+  
 }
