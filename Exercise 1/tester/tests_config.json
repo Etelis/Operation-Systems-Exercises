@@ -16,41 +16,55 @@
   
  "part_2": [
     {
+      "input_path_pgn": "filtered_games/Alburt/Alburt_100.pgn",
+      "moves": "ssnddq"
+    },
+    {
+      "input_path_pgn": "filtered_games/Alburt/Alburt_196.pgn",
+      "moves": "dwdxmdwjoaq"
+    },
+    {
+      "input_path_pgn": "filtered_games/Alburt/Alburt_340.pgn",
+      "moves": "sodsaaaaq"
+    },
+    {
+      "input_path_pgn": "filtered_games/Alburt/Alburt_375.pgn",
+      "moves": "idwwkwyadaddawkdawwsawdwswsadusfawsq"
+    },
+    {
+      "input_path_pgn": "filtered_games/Alburt/Alburt_458.pgn",
+      "moves": "dwdwadaaddgwswkdlwddsaswsssasoslhadq"
+    },
+    {
+      "input_path_pgn": "filtered_games/Alburt/Alburt_563.pgn",
+      "moves": "ddamawshdzfawiwadawdsdwsddwaadwwscladaq"
+    }
+  ],
+
+  "part_2_special": [
+    {
       "input_path_pgn": "splited_pgns/capmemel24/capmemel24_1.pgn",
-      "moves": "ssnddq",
-      "expected_output_without_special_moves": "expected_outputs/chess_game1_without_special_moves.txt",
-      "expected_output_with_special_moves": "expected_outputs/chess_game1_with_special_moves.txt"
+      "moves": "ssnddq"
     },
     {
       "input_path_pgn": "splited_pgns/capmemel24/capmemel24_2.pgn",
-      "moves": "dwdxmdwjoaq",
-      "expected_output_without_special_moves": "expected_outputs/chess_game2_without_special_moves.txt",
-      "expected_output_with_special_moves": "expected_outputs/chess_game2_with_special_moves.txt"
+      "moves": "dwdxmdwjoaq"
     },
     {
       "input_path_pgn": "splited_pgns/capmemel24/capmemel24_3.pgn",
-      "moves": "sodsaaaaq",
-      "expected_output_without_special_moves": "expected_outputs/chess_game3_without_special_moves.txt",
-      "expected_output_with_special_moves": "expected_outputs/chess_game3_with_special_moves.txt"
+      "moves": "sodsaaaaq"
     },
     {
       "input_path_pgn": "splited_pgns/capmemel24/capmemel24_4.pgn",
-      "moves": "idwwkwyadaddawkdawwsawdwswsadusfawsq",
-      "expected_output_without_special_moves": "expected_outputs/chess_game4_without_special_moves.txt",
-      "expected_output_with_special_moves": "expected_outputs/chess_game4_with_special_moves.txt"
+      "moves": "idwwkwyadaddawkdawwsawdwswsadusfawsq"
     },
     {
       "input_path_pgn": "splited_pgns/capmemel24/capmemel24_5.pgn",
-      "moves": "dwdwadaaddgwswkdlwddsaswsssasoslhadq",
-      "expected_output_without_special_moves": "expected_outputs/chess_game5_without_special_moves.txt",
-      "expected_output_with_special_moves": "expected_outputs/chess_game5_with_special_moves.txt"
+      "moves": "dwdwadaaddgwswkdlwddsaswsssasoslhadq"
     },
     {
       "input_path_pgn": "splited_pgns/capmemel24/capmemel24_6.pgn",
-      "moves": "ddamawshdzfawiwadawdsdwsddwaadwwscladaq",
-      "expected_output_without_special_moves": "expected_outputs/chess_game6_without_special_moves.txt",
-      "expected_output_with_special_moves": "expected_outputs/chess_game6_with_special_moves.txt"
+      "moves": "ddamawshdzfawiwadawdsdwsddwaadwwscladaq"
     }
   ]
-  
 }

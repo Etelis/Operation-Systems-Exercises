@@ -34,7 +34,7 @@ check_missing_files() {
 
 preprocess_file() {
     local FILE=$1
-    sed '/^[[:space:]]*$/d' "$FILE" | tr -d '\n' | sed 's/[[:space:]]*$//'
+    sed -e '/^[[:space:]]*$/d' -e ':a' -e 'N' -e '$!ba' -e 's/\n/\x0/' -e 's/[[:space:]]*$//' -e 's/\x0/\n/g' "$FILE" | sed -e '$a\'
 }
 
 compare_file_contents() {
@@ -48,9 +48,10 @@ compare_file_contents() {
             OUTPUT_CONTENT=$(preprocess_file "$OUTPUT_DIR/$FILE_NAME")
             DIFF=$(diff <(echo "$EXPECTED_CONTENT") <(echo "$OUTPUT_CONTENT"))
             if [[ -n "$DIFF" ]]; then
-                echo -e "${RED}Differences found in file $FILE_NAME:${NC}"
-                echo "$DIFF"
                 CONTENT_MISMATCH=1
+                FAIL_DIR="fails/test_$(basename "$OUTPUT_DIR")"
+                mkdir -p "$FAIL_DIR"
+                echo "$DIFF" > "$FAIL_DIR/diff_$FILE_NAME.txt"
             fi
         fi
     done
@@ -80,6 +81,10 @@ run_part_1_tests() {
     cp "$SPLIT_SCRIPT" "$CURRENT_DIR"
 
     cd "$CURRENT_DIR"
+
+    if [[ $SHELL == *"cbash"* ]]; then
+        sed -i 's|#!/bin/bash|#!/bin/cbash|' "$SPLIT_SCRIPT"
+    fi
 
     for TEST in $PART_1_TESTS; do
         INPUT=$(echo "$TEST" | jq -r '.input')
@@ -111,6 +116,7 @@ run_part_1_tests() {
         echo -e "${YELLOW}----------------------------------------${NC}"
     done
 
+    rm -f "$SPLIT_SCRIPT"
     echo -e "${CYAN}========================================${NC}"
     echo -e "${CYAN}         Tests for Part 1 completed         ${NC}"
     echo -e "${CYAN}========================================${NC}\n\n"
@@ -130,16 +136,29 @@ run_part_2_tests() {
         return
     fi
 
+    if [[ -f "chess_sim.py" ]]; then
+        CHESS_SIM_PY="chess_sim.py"
+    else
+        echo -e "${RED}No chess simulator script found (chess_sim.py)!${NC}"
+        return
+    fi
+
     chmod +x "$CHESS_SIM_SCRIPT"
     cp "$CHESS_SIM_SCRIPT" "$CURRENT_DIR"
+    cp "$CHESS_SIM_PY" "$CURRENT_DIR"
 
     cd "$CURRENT_DIR"
 
+    if [[ $SHELL == *"cbash"* ]]; then
+        sed -i 's|#!/bin/bash|#!/bin/cbash|' "$CHESS_SIM_SCRIPT"
+    fi
+
+    TEST_NUM=0
+
     for TEST in $PART_2_TESTS; do
+        ((TEST_NUM++))
         INPUT_PATH_PGN=$(echo "$TEST" | jq -r '.input_path_pgn')
         MOVES=$(echo "$TEST" | jq -r '.moves')
-        EXPECTED_OUTPUT_WITHOUT_SPECIAL=$(echo "$TEST" | jq -r '.expected_output_without_special_moves')
-        EXPECTED_OUTPUT_WITH_SPECIAL=$(echo "$TEST" | jq -r '.expected_output_with_special_moves')
 
         echo -e "${YELLOW}----------------------------------------${NC}"
         echo -e "${YELLOW}Running test with input: ${BLUE}$INPUT_PATH_PGN${NC}"
@@ -152,27 +171,23 @@ run_part_2_tests() {
 
         MOVES_WITH_ENTER=$(echo "$MOVES" | sed 's/./&\n/g')
 
-        echo -e "$MOVES_WITH_ENTER" | ./"$CHESS_SIM_SCRIPT" "$INPUT_PATH_PGN" > "$TEMP_DIR/output.txt" 2>&1
+        # Run chess_sim.sh
+        echo -e "$MOVES_WITH_ENTER" | ./"$CHESS_SIM_SCRIPT" "$INPUT_PATH_PGN" > "$TEMP_DIR/student_output.txt" 2>&1
 
-        echo -e "${BLUE}Comparing output...${NC}"
-        DIFF_WITHOUT_SPECIAL=$(diff -u <(preprocess_file "$TEMP_DIR/output.txt") <(preprocess_file "$EXPECTED_OUTPUT_WITHOUT_SPECIAL"))
-        DIFF_WITH_SPECIAL=$(diff -u <(preprocess_file "$TEMP_DIR/output.txt") <(preprocess_file "$EXPECTED_OUTPUT_WITH_SPECIAL"))
+        # Run chess_sim.py
+        echo -e "$MOVES_WITH_ENTER" | python3 "$CHESS_SIM_PY" "$INPUT_PATH_PGN" > "$TEMP_DIR/expected_output.txt" 2>&1
 
-        if [[ -z "$DIFF_WITHOUT_SPECIAL" ]]; then
-            echo -e "${GREEN}Output matches the expected output without special moves.${NC}"
-        elif [[ -z "$DIFF_WITH_SPECIAL" ]]; then
-            echo -e "${GREEN}Output matches the expected output with special moves.${NC}"
-            echo -e "${YELLOW}Bonus applied for special moves!${NC}"
+        # Compare outputs
+        DIFF=$(diff -u "$TEMP_DIR/student_output.txt" "$TEMP_DIR/expected_output.txt")
+
+        if [[ -z "$DIFF" ]]; then
+            echo -e "${GREEN}Output matches the expected output.${NC}"
         else
-            echo -e "${RED}Output differs from both expected outputs:${NC}"
-            if [[ -n "$DIFF_WITHOUT_SPECIAL" ]]; then
-                echo -e "${RED}Differences with expected output without special moves:${NC}"
-                echo "$DIFF_WITHOUT_SPECIAL"
-            fi
-            if [[ -n "$DIFF_WITH_SPECIAL" ]]; then
-                echo -e "${RED}Differences with expected output with special moves:${NC}"
-                echo "$DIFF_WITH_SPECIAL"
-            fi
+            echo -e "${RED}Test $TEST_NUM failed.${NC}"
+            FAIL_DIR="fails/test_$TEST_NUM"
+            mkdir -p "$FAIL_DIR"
+            cp "$TEMP_DIR/student_output.txt" "$FAIL_DIR/student_output.txt"
+            cp "$TEMP_DIR/expected_output.txt" "$FAIL_DIR/expected_output.txt"
         fi
 
         echo -e "${BLUE}Cleaning up...${NC}"
@@ -182,9 +197,98 @@ run_part_2_tests() {
     done
 
     rm -f "$CHESS_SIM_SCRIPT"
+    rm -f "$CHESS_SIM_PY"
 
     echo -e "${CYAN}========================================${NC}"
     echo -e "${CYAN}         Tests for Part 2 completed         ${NC}"
+    echo -e "${CYAN}========================================${NC}\n\n"
+}
+
+run_part_2_special_tests() {
+    echo -e "${CYAN}========================================${NC}"
+    echo -e "${CYAN}      Beginning Tests for Part 2 Special     ${NC}"
+    echo -e "${CYAN}========================================${NC}"
+
+    cd ..
+
+    if [[ -f "chess_sim.sh" ]]; then
+        CHESS_SIM_SCRIPT="chess_sim.sh"
+    else
+        echo -e "${RED}No chess simulator script found (chess_sim.sh)!${NC}"
+        return
+    fi
+
+    if [[ -f "chess_sim.py" ]]; then
+        CHESS_SIM_PY="chess_sim.py"
+    else
+        echo -e "${RED}No chess simulator script found (chess_sim.py)!${NC}"
+        return
+    fi
+
+    chmod +x "$CHESS_SIM_SCRIPT"
+    cp "$CHESS_SIM_SCRIPT" "$CURRENT_DIR"
+    cp "$CHESS_SIM_PY" "$CURRENT_DIR"
+
+    cd "$CURRENT_DIR"
+
+    if [[ $SHELL == *"cbash"* ]]; then
+        sed -i 's|#!/bin/bash|#!/bin/cbash|' "$CHESS_SIM_SCRIPT"
+    fi
+
+    TEST_NUM=0
+    ALL_PASSED=1
+
+    for TEST in $PART_2_SPECIAL_TESTS; do
+        ((TEST_NUM++))
+        INPUT_PATH_PGN=$(echo "$TEST" | jq -r '.input_path_pgn')
+        MOVES=$(echo "$TEST" | jq -r '.moves')
+
+        echo -e "${YELLOW}----------------------------------------${NC}"
+        echo -e "${YELLOW}Running test with input: ${BLUE}$INPUT_PATH_PGN${NC}"
+        echo -e "${YELLOW}Moves: ${BLUE}$MOVES${NC}"
+        echo -e "${YELLOW}----------------------------------------${NC}"
+
+        TEMP_DIR=$(mktemp -d)
+
+        echo -e "${BLUE}Running the chess simulator script...${NC}"
+
+        MOVES_WITH_ENTER=$(echo "$MOVES" | sed 's/./&\n/g')
+
+        # Run chess_sim.sh
+        echo -e "$MOVES_WITH_ENTER" | ./"$CHESS_SIM_SCRIPT" "$INPUT_PATH_PGN" > "$TEMP_DIR/student_output.txt" 2>&1
+
+        # Run chess_sim.py
+        echo -e "$MOVES_WITH_ENTER" | python3 "$CHESS_SIM_PY" "$INPUT_PATH_PGN" > "$TEMP_DIR/expected_output.txt" 2>&1
+
+        # Compare outputs
+        DIFF=$(diff -u "$TEMP_DIR/student_output.txt" "$TEMP_DIR/expected_output.txt")
+
+        if [[ -z "$DIFF" ]]; then
+            echo -e "${GREEN}Output matches the expected output.${NC}"
+        else
+            echo -e "${RED}Special Test $TEST_NUM failed.${NC}"
+            ALL_PASSED=0
+            FAIL_DIR="fails/test_special_$TEST_NUM"
+            mkdir -p "$FAIL_DIR"
+            cp "$TEMP_DIR/student_output.txt" "$FAIL_DIR/student_output.txt"
+            cp "$TEMP_DIR/expected_output.txt" "$FAIL_DIR/expected_output.txt"
+        fi
+
+        echo -e "${BLUE}Cleaning up...${NC}"
+        rm -r "$TEMP_DIR"
+
+        echo -e "${YELLOW}----------------------------------------${NC}"
+    done
+
+    rm -f "$CHESS_SIM_SCRIPT"
+    rm -f "$CHESS_SIM_PY"
+
+    if [[ $ALL_PASSED -eq 1 ]]; then
+        echo -e "${GREEN}All special case tests passed! You will be getting 10 points bonus.${NC}"
+    fi
+
+    echo -e "${CYAN}========================================${NC}"
+    echo -e "${CYAN}     Tests for Part 2 Special completed     ${NC}"
     echo -e "${CYAN}========================================${NC}\n\n"
 }
 
@@ -192,7 +296,10 @@ CURRENT_DIR=$(pwd)
 
 PART_1_TESTS=$(jq -c '.part_1[]' "$CONFIG_FILE")
 PART_2_TESTS=$(jq -c '.part_2[]' "$CONFIG_FILE")
+PART_2_SPECIAL_TESTS=$(jq -c '.part_2_special[]' "$CONFIG_FILE")
 
 run_part_1_tests
 
 run_part_2_tests
+
+run_part_2_special_tests
