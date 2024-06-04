@@ -159,7 +159,7 @@ Move 0/93
 Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit:
 Move 93/93
   a b c d e f g h
-8 . . . . . . . r 8
+8 . . . . . . . . 8
 7 . . . . . . . . 7
 6 . . . . k . p . 6
 5 . . P . . . . p 5
@@ -235,7 +235,7 @@ Move 2/93
 Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit:
 Move 93/93
   a b c d e f g h
-8 . . . . . . . r 8
+8 . . . . . . . . 8
 7 . . . . . . . . 7
 6 . . . . k . p . 6
 5 . . P . . . . p 5
@@ -247,7 +247,7 @@ Move 93/93
 Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit:
 Move 92/93
   a b c d e f g h
-8 . . . . . . . r 8
+8 . . . . . . . . 8
 7 . . . . . . . . 7
 6 . . . . k . p . 6
 5 . . P . . . . p 5
@@ -259,7 +259,7 @@ Move 92/93
 Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit:
 Move 93/93
   a b c d e f g h
-8 . . . . . . . r 8
+8 . . . . . . . . 8
 7 . . . . . . . . 7
 6 . . . . k . p . 6
 5 . . P . . . . p 5
@@ -283,7 +283,7 @@ Move 0/93
 Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit:
 Move 93/93
   a b c d e f g h
-8 . . . . . . . r 8
+8 . . . . . . . . 8
 7 . . . . . . . . 7
 6 . . . . k . p . 6
 5 . . P . . . . p 5
@@ -295,7 +295,7 @@ Move 93/93
 Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit:
 Move 93/93
   a b c d e f g h
-8 . . . . . . . r 8
+8 . . . . . . . . 8
 7 . . . . . . . . 7
 6 . . . . k . p . 6
 5 . . P . . . . p 5
@@ -307,7 +307,7 @@ Move 93/93
 Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit:
 Move 93/93
   a b c d e f g h
-8 . . . . . . . r 8
+8 . . . . . . . . 8
 7 . . . . . . . . 7
 6 . . . . k . p . 6
 5 . . P . . . . p 5
@@ -319,7 +319,7 @@ Move 93/93
 Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit:
 Move 92/93
   a b c d e f g h
-8 . . . . . . . r 8
+8 . . . . . . . . 8
 7 . . . . . . . . 7
 6 . . . . k . p . 6
 5 . . P . . . . p 5
@@ -331,7 +331,7 @@ Move 92/93
 Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit:
 Move 93/93
   a b c d e f g h
-8 . . . . . . . r 8
+8 . . . . . . . . 8
 7 . . . . . . . . 7
 6 . . . . k . p . 6
 5 . . P . . . . p 5
@@ -345,7 +345,7 @@ Invalid key pressed: o
 Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit:
 Move 93/93
   a b c d e f g h
-8 . . . . . . . r 8
+8 . . . . . . . . 8
 7 . . . . . . . . 7
 6 . . . . k . p . 6
 5 . . P . . . . p 5
@@ -361,7 +361,7 @@ Invalid key pressed: h
 Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit:
 Move 92/93
   a b c d e f g h
-8 . . . . . . . r 8
+8 . . . . . . . . 8
 7 . . . . . . . . 7
 6 . . . . k . p . 6
 5 . . P . . . . p 5
@@ -373,7 +373,7 @@ Move 92/93
 Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit:
 Move 93/93
   a b c d e f g h
-8 . . . . . . . r 8
+8 . . . . . . . . 8
 7 . . . . . . . . 7
 6 . . . . k . p . 6
 5 . . P . . . . p 5

@@ -213,7 +213,7 @@ Move 0/63
 Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit:
 Move 63/63
   a b c d e f g h
-8 r . . . . . . k 8
+8 r . . . r . . k 8
 7 . b p . . p . p 7
 6 p . . q . p . Q 6
 5 . . . . . P . . 5
@@ -225,7 +225,7 @@ Move 63/63
 Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit:
 Move 62/63
   a b c d e f g h
-8 r . . . . . . k 8
+8 r . . . r . . k 8
 7 . b p . . p . p 7
 6 p . . q . p . Q 6
 5 . . . . . P . . 5
@@ -273,7 +273,7 @@ Move 0/63
 Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit:
 Move 63/63
   a b c d e f g h
-8 r . . . . . . k 8
+8 r . . . r . . k 8
 7 . b p . . p . p 7
 6 p . . q . p . Q 6
 5 . . . . . P . . 5
@@ -297,7 +297,7 @@ Move 0/63
 Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit:
 Move 63/63
   a b c d e f g h
-8 r . . . . . . k 8
+8 r . . . r . . k 8
 7 . b p . . p . p 7
 6 p . . q . p . Q 6
 5 . . . . . P . . 5
@@ -309,7 +309,7 @@ Move 63/63
 Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit:
 Move 62/63
   a b c d e f g h
-8 r . . . . . . k 8
+8 r . . . r . . k 8
 7 . b p . . p . p 7
 6 p . . q . p . Q 6
 5 . . . . . P . . 5
@@ -321,7 +321,7 @@ Move 62/63
 Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit:
 Move 63/63
   a b c d e f g h
-8 r . . . . . . k 8
+8 r . . . r . . k 8
 7 . b p . . p . p 7
 6 p . . q . p . Q 6
 5 . . . . . P . . 5
@@ -335,7 +335,7 @@ Invalid key pressed: u
 Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit:
 Move 63/63
   a b c d e f g h
-8 r . . . . . . k 8
+8 r . . . r . . k 8
 7 . b p . . p . p 7
 6 p . . q . p . Q 6
 5 . . . . . P . . 5
@@ -349,7 +349,7 @@ Invalid key pressed: f
 Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit:
 Move 62/63
   a b c d e f g h
-8 r . . . . . . k 8
+8 r . . . r . . k 8
 7 . b p . . p . p 7
 6 p . . q . p . Q 6
 5 . . . . . P . . 5
@@ -373,7 +373,7 @@ Move 0/63
 Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit:
 Move 63/63
   a b c d e f g h
-8 r . . . . . . k 8
+8 r . . . r . . k 8
 7 . b p . . p . p 7
 6 p . . q . p . Q 6
 5 . . . . . P . . 5

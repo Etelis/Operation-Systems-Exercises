@@ -87,7 +87,7 @@ Move 0/38
 Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit:
 Move 38/38
   a b c d e f g h
-8 r . . q . . k r 8
+8 r . . q r . k . 8
 7 p p . . . p p . 7
 6 . b n . . . . p 6
 5 . . . p . . . . 5
@@ -107,7 +107,7 @@ Invalid key pressed: f
 Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit:
 Move 37/38
   a b c d e f g h
-8 r . . q . . k r 8
+8 r . . q . r k . 8
 7 p p . . . p p . 7
 6 . b n . . . . p 6
 5 . . . p . . . . 5
@@ -205,7 +205,7 @@ Move 1/38
 Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit:
 Move 38/38
   a b c d e f g h
-8 r . . q . . k r 8
+8 r . . q r . k . 8
 7 p p . . . p p . 7
 6 . b n . . . . p 6
 5 . . . p . . . . 5
@@ -231,7 +231,7 @@ Move 0/38
 Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit:
 Move 38/38
   a b c d e f g h
-8 r . . q . . k r 8
+8 r . . q r . k . 8
 7 p p . . . p p . 7
 6 . b n . . . . p 6
 5 . . . p . . . . 5
@@ -319,7 +319,7 @@ Move 0/38
 Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit:
 Move 38/38
   a b c d e f g h
-8 r . . q . . k r 8
+8 r . . q r . k . 8
 7 p p . . . p p . 7
 6 . b n . . . . p 6
 5 . . . p . . . . 5
@@ -335,7 +335,7 @@ Invalid key pressed: l
 Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit:
 Move 37/38
   a b c d e f g h
-8 r . . q . . k r 8
+8 r . . q . r k . 8
 7 p p . . . p p . 7
 6 . b n . . . . p 6
 5 . . . p . . . . 5
@@ -347,7 +347,7 @@ Move 37/38
 Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit:
 Move 38/38
   a b c d e f g h
-8 r . . q . . k r 8
+8 r . . q r . k . 8
 7 p p . . . p p . 7
 6 . b n . . . . p 6
 5 . . . p . . . . 5
@@ -359,7 +359,7 @@ Move 38/38
 Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit:
 Move 37/38
   a b c d e f g h
-8 r . . q . . k r 8
+8 r . . q . r k . 8
 7 p p . . . p p . 7
 6 . b n . . . . p 6
 5 . . . p . . . . 5
