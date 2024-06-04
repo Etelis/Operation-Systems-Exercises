@@ -34,7 +34,7 @@ check_missing_files() {
 
 preprocess_file() {
     local FILE=$1
-    sed -e '/^[[:space:]]*$/d' -e ':a' -e 'N' -e '$!ba' -e 's/\n/\x0/' -e 's/[[:space:]]*$//' -e 's/\x0/\n/g' "$FILE"
+    sed -e '/^[[:space:]]*$/d' -e ':a' -e 'N' -e '$!ba' -e 's/\n/\x0/' -e 's/[[:space:]]*$//' -e 's/\x0/\n/g' "$FILE" | sed -e '$a\'
 }
 
 compare_file_contents() {
@@ -116,6 +116,7 @@ run_part_1_tests() {
         echo -e "${YELLOW}----------------------------------------${NC}"
     done
 
+    rm -f "$SPLIT_SCRIPT"
     echo -e "${CYAN}========================================${NC}"
     echo -e "${CYAN}         Tests for Part 1 completed         ${NC}"
     echo -e "${CYAN}========================================${NC}\n\n"
