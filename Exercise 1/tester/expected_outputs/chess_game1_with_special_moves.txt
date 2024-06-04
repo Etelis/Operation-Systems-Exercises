@@ -25,7 +25,7 @@ Move 0/114
 Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit:
 Move 114/114
   a b c d e f g h
-8 . . . . . . . r 8
+8 . . . . . . . . 8
 7 . . . . . . R . 7
 6 . . p . . . . . 6
 5 p . . . . . p p 5
@@ -37,7 +37,7 @@ Move 114/114
 Press 'd' to move forward, 'a' to move back, 'w' to go to the start, 's' to go to the end, 'q' to quit:
 Move 114/114
   a b c d e f g h
-8 . . . . . . . r 8
+8 . . . . . . . . 8
 7 . . . . . . R . 7
 6 . . p . . . . . 6
 5 p . . . . . p p 5
