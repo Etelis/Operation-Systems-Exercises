@@ -11,7 +11,7 @@ To implement a synchronization lock for file access, ensuring that only one proc
 - Write a program that forks a dynamic number of child processes. All child processes should write to the same file in a specified order.
 - Implement a synchronization mechanism using a lock file to ensure that only one process can write to the file at a time.
 - The parent process should wait for all child processes to complete their writing.
-- The program should accept input parameters to specify the messages, the order in which the processes should write, and the number of times each process writes to the file.
+- The program should accept input parameters to specify the messages and the number of times each process writes to the file.
 - Save your program as `part2.c`.
 
 ### Requirements:
@@ -21,7 +21,6 @@ To implement a synchronization lock for file access, ensuring that only one proc
 
 2. **Process Writing:**
    - Each child process should print a specified message to `stdout` a specified number of times using the provided `write_message` function.
-   - The order in which the child processes write should follow the order provided in the command-line arguments.
 
 3. **Synchronization Lock:**
    - Implement a locking mechanism using `lockfile.lock` to ensure that only one process can write to the file at a time.
@@ -32,6 +31,7 @@ To implement a synchronization lock for file access, ensuring that only one proc
 
 4. **Forking and Writing:**
    - Fork a dynamic number of child processes based on input arguments.
+   - ** First open the file needed for writing, and then fork the children in a loop, finally waiting for them ** 
    - The parent process should wait for all child processes to complete their writing.
 
 5. **Error Handling:**
@@ -40,11 +40,10 @@ To implement a synchronization lock for file access, ensuring that only one proc
 6. **Command-Line Arguments:**
    - The program should accept command-line arguments to define:
      - The messages each process should write.
-     - The order in which the processes should write.
      - The number of times each process should write to the file.
 
 7. **Output Redirection:**
-   - Redirect the output of the program to a file named `output2.txt` using shell redirection when running the program.
+   - Redirect the output of the program to a file named `output2.txt` using output redirection when running the program.
 
 ### Deliverables:
 
