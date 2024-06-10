@@ -46,12 +46,12 @@ To understand the challenges of synchronizing file access between parent and chi
 
 1. **Example Input:**
 
-   ```bash
+```bash
    ./part1 "Parent message
 " "Child1 message
 " "Child2 message
 " 3
-   ```
+```
 
 2. **Expected Output in `output.txt`:**
 
