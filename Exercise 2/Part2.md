@@ -54,7 +54,7 @@ To implement a synchronization lock for file access, ensuring that only one proc
 1. **Example Input:**
 
    ```bash
-   ./part2 "First message" "Second message" "Third message" "1 3 2" 3 > output2.txt
+   ./part2 "First message" "Second message" "Third message" 3 > output2.txt
    ```
 
 2. **Expected Output in `output2.txt`:**
