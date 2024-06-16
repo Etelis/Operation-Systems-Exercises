@@ -96,7 +96,7 @@ You will use the provided `write_message` function to handle the printing with r
 ```c
 void write_message(const char *message, int count) {
     for (int i = 0; i < count; i++) {
-        printf("%s", message);
+        printf("%s\n", message);
         usleep((rand() % 100) * 1000); // Random delay between 0 and 99 milliseconds
     }
 }
