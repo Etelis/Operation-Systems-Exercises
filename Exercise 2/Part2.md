@@ -75,10 +75,10 @@ To implement a synchronization lock for file access, ensuring that only one proc
 
 **Command-Line Argument Handling:**
 
-Ensure the program accepts the necessary arguments for the messages, the order of writing, and the count of writes.
+Ensure the program accepts the necessary arguments for the messages(at least 3 messages), the order of writing, and the count of writes.
 
 ```c
-if (argc < 6) {
+if (argc < 4) {
     fprintf(stderr, "Usage: %s <message1> <message2> ... <order> <count>
 ", argv[0]);
     return 1;
@@ -96,7 +96,7 @@ You will use the provided `write_message` function to handle the printing with r
 ```c
 void write_message(const char *message, int count) {
     for (int i = 0; i < count; i++) {
-        printf("%s", message);
+        printf("%s\n", message);
         usleep((rand() % 100) * 1000); // Random delay between 0 and 99 milliseconds
     }
 }
