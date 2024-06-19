@@ -43,8 +43,8 @@ In this part, you will focus on implementing basic buffered reading and writing 
   - Always flush the write buffer when switching from writing to reading to maintain file consistency.
 
 - **File Offset Management**:
-  - Keep in mind the file offset maintained by the operating system in the open file table. Ensure that the file pointer is correctly updated after each read and write operation to maintain synchronization between the buffer and the actual file content.
-  - 
+  - Keep in mind the file offset maintained by the operating system in the open file table. Ensure that the file pointer is correctly updated after each read and write operation to maintain synchronization between the buffer and the actual file content
+ 
 ### Part 2: Adding the O_PREAPPEND Logic
 
 Now, let's add the logic for the `O_PREAPPEND` flag to support writing to the beginning of the file without overriding existing content.
@@ -59,8 +59,7 @@ Now, let's add the logic for the `O_PREAPPEND` flag to support writing to the be
 
 3. **Reading in Between**:
    - **Flush Before Reading:** Before performing any read operation, always flush the write buffer. This ensures that all pending data is written to the file in an append manner, adhering to the O_PREAPPEND logic. This flush operation ensures that the buffer's contents are correctly written to the file before any read occurs.
-   - **Appending After Reads:** If a read is followed by a write operation, ensure that the write does not override the existing data at the current file position. Instead, handle the next write such that it is effectively appended at this position without disturbing the original content.
-   - 
+      
 ### Provided Header File (`buffered_open.h`)
 ```c
 #ifndef BUFFERED_OPEN_H
@@ -112,6 +111,21 @@ int buffered_close(buffered_file_t *bf);
 
 ```
 
+### Alternative (`buffered_open.h`)
+If you find it more suiteable you might use this alternative buffered_open.h
+
+```c
+// Structure to hold the buffer and original flags
+typedef struct {
+    int fd;
+    char *buffer;
+    size_t buffer_size;
+    size_t buffer_pos;
+    int flags;
+    int preappend; // flag to remember if O_PREAPPEND was used
+    bool is_write // indicating if that's a read or write operation. 
+} buffered_file_t;
+```
 ### Example Usage
 Here's how your code should be used:
 
