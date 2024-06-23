@@ -78,7 +78,7 @@ To implement a synchronization lock for file access, ensuring that only one proc
 Ensure the program accepts the necessary arguments for the messages(at least 3 messages), and the count of writes.
 
 ```c
-if (argc < 4) {
+if (argc <= 4) {
     fprintf(stderr, "Usage: %s <message1> <message2> ... <count>
 ", argv[0]);
     return 1;
