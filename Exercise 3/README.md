@@ -59,7 +59,7 @@ The Screen Manager displays the strings it receives via the Co-Editors' queue to
 
 The system should be implemented according to the following chart:
 
-![chart](image-1.png)
+![chart](image.png)
 
 Three producers communicate with the dispatcher via their Producer queues. The Dispatcher communicates with the Co-Editors via three queues corresponding to the three types of messages. The Co-Editors communicate with the Screen-Manager via a single shared queue, and the Screen-Manager displays the system's output.
 
