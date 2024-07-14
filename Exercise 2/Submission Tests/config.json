@@ -1,0 +1,34 @@
+{
+    "tests": [
+        {
+            "name": "Test 1 - Simple Messages",
+            "args": ["Hello", "World", "1 2", "3"],
+            "expected_count": 9,
+            "expected_messages": ["Hello", "World", "1 2"]
+        },
+        {
+            "name": "Test 2 - Reverse Order",
+            "args": ["First", "Second", "2 1", "2"],
+            "expected_count": 6,
+            "expected_messages": ["First", "Second", "2 1"]
+        },
+        {
+            "name": "Test 3 - Longer Messages",
+            "args": ["This", "is", "a", "test", "3 1 4 2", "1"],
+            "expected_count": 5,
+            "expected_messages": ["This", "is", "a", "test", "3 1 4 2"]
+        },
+        {
+            "name": "Test 4 - Multiple Writes",
+            "args": ["First", "Second", "Third", "Fourth", "4 2 1 3", "5"],
+            "expected_count": 25,
+            "expected_messages": ["First", "Second", "Third", "Fourth", "4 2 1 3"]
+        },
+        {
+            "name": "Test 5 - Complex Order",
+            "args": ["One", "Two", "Three", "Four", "2 3 1 4 1", "2"],
+            "expected_count": 10, 
+            "expected_messages": ["One", "Two", "Three", "Four", "2 3 1 4 1"]
+        }
+    ]
+}
