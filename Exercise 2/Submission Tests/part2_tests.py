@@ -3,6 +3,7 @@ import json
 import time
 import re
 from collections import Counter
+import os
 
 def check_code(c_file):
     with open(c_file, 'r') as file:
@@ -13,7 +14,7 @@ def check_code(c_file):
 
 def compile_c_file(c_file, output_file):
     try:
-        result = subprocess.run(['gcc', c_file, '-o', output_file], check=True, stderr=subprocess.PIPE)
+        subprocess.run(['gcc', c_file, '-o', output_file], check=True, stderr=subprocess.PIPE)
         return True
     except subprocess.CalledProcessError:
         return False
@@ -24,6 +25,11 @@ def run_test(executable, test, test_number):
     try:
         result = subprocess.run(command, check=True, capture_output=True, shell=True, timeout=50)
         output = result.stdout.decode().strip().split('\n')
+        
+        # Check if the output file exists
+        if os.path.exists('output2.txt'):
+            with open('output2.txt', 'r') as file:
+                output = file.read().strip().split('\n')
 
         output_count = len(output)
         output_counter = Counter(output)
@@ -63,7 +69,7 @@ def main():
     output_results_file = 'part2_output.txt'
 
     if not check_code(c_file):
-        results = [f"TEST_{i+1}, FAILED" for i in range(len(json.load(open(config_file))['tests']))]
+        results = ["TEST_ILEGAL_USAGE" for _ in range(len(json.load(open(config_file))['tests']))]
     elif compile_c_file(c_file, output_file):
         results = run_tests(f'./{output_file}', config_file)
     else:
@@ -72,6 +78,9 @@ def main():
     with open(output_results_file, 'w') as f:
         for result in results:
             f.write(result + '\n')
+
+    for result in results:
+        print(result)
 
 if __name__ == "__main__":
     main()
