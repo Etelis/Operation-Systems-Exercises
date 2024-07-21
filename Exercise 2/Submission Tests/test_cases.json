@@ -1,0 +1,194 @@
+[
+    {
+        "description": "Basic file copy",
+        "source_directory": "test_src",
+        "destination_directory": "test_dest",
+        "copy_symlinks": false,
+        "copy_permissions": false,
+        "items": [
+            {
+                "name": "file1.txt",
+                "type": "file",
+                "content": "This is a test file.",
+                "permissions": 420
+            }
+        ]
+    },
+    {
+        "description": "Copy directory structure",
+        "source_directory": "test_src",
+        "destination_directory": "test_dest",
+        "copy_symlinks": false,
+        "copy_permissions": true,
+        "items": [
+            {
+                "name": "dir1",
+                "type": "directory",
+                "permissions": 493
+            },
+            {
+                "name": "dir1/file2.txt",
+                "type": "file",
+                "content": "Another test file.",
+                "permissions": 420
+            }
+        ]
+    },
+    {
+        "description": "Copy symbolic links",
+        "source_directory": "test_src",
+        "destination_directory": "test_dest",
+        "copy_symlinks": true,
+        "copy_permissions": false,
+        "items": [
+            {
+                "name": "file3.txt",
+                "type": "file",
+                "content": "Yet another test file.",
+                "permissions": 420
+            },
+            {
+                "name": "link_to_file3",
+                "type": "symlink",
+                "target": "file3.txt"
+            }
+        ]
+    },
+    {
+        "description": "Nested directory structure with files and links",
+        "source_directory": "test_src",
+        "destination_directory": "test_dest",
+        "copy_symlinks": true,
+        "copy_permissions": true,
+        "items": [
+            {
+                "name": "nested_dir",
+                "type": "directory",
+                "permissions": 493
+            },
+            {
+                "name": "nested_dir/file4.txt",
+                "type": "file",
+                "content": "Nested directory test file.",
+                "permissions": 420
+            },
+            {
+                "name": "nested_dir/sub_dir",
+                "type": "directory",
+                "permissions": 493
+            },
+            {
+                "name": "nested_dir/sub_dir/file5.txt",
+                "type": "file",
+                "content": "Subdirectory test file.",
+                "permissions": 420
+            },
+            {
+                "name": "nested_dir/link_to_file4",
+                "type": "symlink",
+                "target": "file4.txt"
+            },
+            {
+                "name": "nested_dir/sub_dir/link_to_file5",
+                "type": "symlink",
+                "target": "file5.txt"
+            }
+        ]
+    },
+    {
+        "description": "Files and directories with varying permissions",
+        "source_directory": "test_src",
+        "destination_directory": "test_dest",
+        "copy_symlinks": false,
+        "copy_permissions": true,
+        "items": [
+            {
+                "name": "file6.txt",
+                "type": "file",
+                "content": "Permission test file.",
+                "permissions": 292
+            },
+            {
+                "name": "dir2",
+                "type": "directory",
+                "permissions": 448
+            },
+            {
+                "name": "dir2/file7.txt",
+                "type": "file",
+                "content": "File inside dir with custom permissions.",
+                "permissions": 256
+            }
+        ]
+    },
+    {
+        "description": "Complex test with multiple nested directories and links",
+        "source_directory": "test_src",
+        "destination_directory": "test_dest",
+        "copy_symlinks": true,
+        "copy_permissions": true,
+        "items": [
+            {
+                "name": "level1",
+                "type": "directory",
+                "permissions": 493
+            },
+            {
+                "name": "level1/level2",
+                "type": "directory",
+                "permissions": 493
+            },
+            {
+                "name": "level1/level2/level3",
+                "type": "directory",
+                "permissions": 493
+            },
+            {
+                "name": "level1/level2/level3/file8.txt",
+                "type": "file",
+                "content": "Deeply nested file.",
+                "permissions": 420
+            },
+            {
+                "name": "level1/level2/level3/link_to_file8",
+                "type": "symlink",
+                "target": "file8.txt"
+            },
+            {
+                "name": "level1/link_to_level2",
+                "type": "symlink",
+                "target": "level2"
+            }
+        ]
+    },
+    {
+        "description": "Test with multiple symlinks pointing to various files and directories",
+        "source_directory": "test_src",
+        "destination_directory": "test_dest",
+        "copy_symlinks": true,
+        "copy_permissions": true,
+        "items": [
+            {
+                "name": "file9.txt",
+                "type": "file",
+                "content": "File with multiple symlinks pointing to it.",
+                "permissions": 420
+            },
+            {
+                "name": "link_to_file9",
+                "type": "symlink",
+                "target": "file9.txt"
+            },
+            {
+                "name": "dir3",
+                "type": "directory",
+                "permissions": 493
+            },
+            {
+                "name": "dir3/link_to_file9_in_dir3",
+                "type": "symlink",
+                "target": "../file9.txt"
+            }
+        ]
+    }
+]
