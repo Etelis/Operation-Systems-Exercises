@@ -1,0 +1,13 @@
+PRODUCER 1
+30
+queue size = 40
+PRODUCER 2
+12
+queue size = 2
+PRODUCER 3
+7
+queue size = 1
+PRODUCER 4
+20
+queue size = 6
+Co-Editor queue size = 6
